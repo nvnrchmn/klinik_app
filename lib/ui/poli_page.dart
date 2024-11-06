@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:klinik_app/model/poli.dart';
-import 'package:klinik_app/ui/poli_detail.dart';
 import 'package:klinik_app/ui/poli_form.dart';
 import 'package:klinik_app/ui/poli_item.dart';
+import 'package:klinik_app/widget/sidebar.dart';
 
 class PoliPage extends StatefulWidget {
   const PoliPage({super.key});
@@ -15,14 +15,15 @@ class _PoliPageState extends State<PoliPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Sidebar(),
       appBar: AppBar(
         title: const Text("Data Poli"),
         actions: [
           GestureDetector(
             child: const Icon(Icons.add),
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => PoliForm()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const PoliForm()));
             },
           )
         ],

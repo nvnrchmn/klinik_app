@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:klinik_app/ui/poli_page.dart';
+import 'package:klinik_app/ui/beranda.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "Klinik APP",
       debugShowCheckedModeBanner: false,
-      home: PoliPage(),
+      darkTheme: ThemeData.dark(),
+      home: const Beranda(),
     );
   }
 }

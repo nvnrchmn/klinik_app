@@ -20,14 +20,18 @@ class _PoliFormState extends State<PoliForm> {
           child: Form(
         key: _formKey,
         child: Column(
-          children: [_fieldNamaPoli(), SizedBox(height: 20), _tombolSimpan()],
+          children: [
+            _fieldNamaPoli(),
+            const SizedBox(height: 20),
+            _tombolSimpan()
+          ],
         ),
       )),
     );
   }
 
   _fieldNamaPoli() {
-    return const TextField(
+    return TextField(
       decoration: const InputDecoration(labelText: "Nama Poli"),
       controller: _namaPoliCtrl,
     );
@@ -36,7 +40,7 @@ class _PoliFormState extends State<PoliForm> {
   _tombolSimpan() {
     return ElevatedButton(
         onPressed: () {
-          Poli poli = new Poli(namaPoli: _namaPoliCtrl.text);
+          Poli poli = Poli(namaPoli: _namaPoliCtrl.text);
           Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => PoliDetail(poli: poli)));
         },
