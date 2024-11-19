@@ -15,7 +15,7 @@ class Sidebar extends StatelessWidget {
         children: [
           const UserAccountsDrawerHeader(
               accountName: Text("Admin"),
-              accountEmail: Text("admin@admin.com")),
+              accountEmail: Text("admin@klinikapp.com")),
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text("Beranda"),
@@ -44,7 +44,7 @@ class Sidebar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.logout_rounded),
-            title: const Text("Keluar"),
+            title: const Text("Logout"),
             onTap: () {
               Navigator.pushAndRemoveUntil(
                   context,
