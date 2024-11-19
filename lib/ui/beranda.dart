@@ -7,9 +7,9 @@ class Beranda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Sidebar(),
-      appBar: AppBar(title: Text("Beranda")),
-      body: Center(
+      drawer: const Sidebar(),
+      appBar: AppBar(title: const Text("Beranda")),
+      body: const Center(
         child: Text("Selamat Datang!"),
       ),
     );

@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key:key);
+  const Login({Key? key}) : super(key: key);
+  @override
   _LoginState createState() => _LoginState();
 }
 
@@ -15,24 +16,26 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: SafeArea(child: Container(
+        child: SafeArea(
+            child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Login Admin", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
-              SizedBox(height: 50),
+              const Text("Login Admin",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
+              const SizedBox(height: 50),
               Center(
                 child: Form(
                   key: _formKey,
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.of(context).size.width / 1.3,
                     child: Column(
                       children: [
                         _usernameTextField(),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         _passwordTextField(),
-                        SizedBox(height: 40),
+                        const SizedBox(height: 40),
                         _tombolLogin(),
                       ],
                     ),
@@ -48,23 +51,23 @@ class _LoginState extends State<Login> {
 
   Widget _usernameTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Username"),
+      decoration: const InputDecoration(labelText: "Username"),
       controller: _usernameCtrl,
     );
   }
 
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Password"),
+      decoration: const InputDecoration(labelText: "Password"),
       obscureText: true,
       controller: _passwordCtrl,
     );
   }
 
-  Widget _tombolLogin(){
-    return Container(
+  Widget _tombolLogin() {
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
-      child: ElevatedButton(child: Text("Login"), onPressed: (){}),
+      child: ElevatedButton(child: const Text("Login"), onPressed: () {}),
     );
   }
 }
