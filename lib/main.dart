@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Klinik APP",
       debugShowCheckedModeBanner: false,
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData.dark(),
       home: const Beranda(),
     );
   }
