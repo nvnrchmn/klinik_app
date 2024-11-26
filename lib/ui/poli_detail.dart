@@ -51,22 +51,26 @@ class _PoliDetailState extends State<PoliDetail> {
           content: const Text("Yakin ingin menghapus data ini?"),
           actions: [
             // Tombol ya
-            ElevatedButton(onPressed: () {
-              Navigator.pop(context);
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => PoliPage()));
-            }, child: const Text("Ya!"),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.red)),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => PoliPage()));
+                },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                child: const Text("Ya!")),
             // Tombol batal
-            ElevatedButton(onPressed: () {
-              Navigator.pop(context);
-            }, child: const Text("Tidak!"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              child: const Text("Tidak!"),
             )
           ],
         );
-      showDialog(context: context, builder: (context) => alertDialog);
-        },
+        showDialog(context: context, builder: (context) => alertDialog);
+      },
       style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
       child: const Text("Hapus"),
     );
